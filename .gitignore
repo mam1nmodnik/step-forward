@@ -4,5 +4,8 @@ application/frontend/node_modules
 
 # Backend 
 
-env/Lib/site-packages
+
+
+# ENV
+env
 
