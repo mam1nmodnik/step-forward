@@ -1,1 +1,8 @@
-frontend/node_modules
+
+# Frontend 
+application/frontend/node_modules
+
+# Backend 
+
+env/Lib/site-packages
+
