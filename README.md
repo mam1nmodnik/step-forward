@@ -1,6 +1,11 @@
 ## Step Forward 
 Система для продажи. 
-
+## env
+Если проблемы с env, сначала удалите папку env. После чего используйте данные команды для повторной установки:
+1. Создание виртуального окружения:  ```python -m venv evn```
+2. Framework django: ```python -m pip install django```
+3. Модуль для релизации rest-api: ```python -m pip install djangorestframework```
+4. CORS: ```python -m pip install django-cors-headers```
 ## Описание коммитов
 | Название | Описание                                                        |
 |----------|-----------------------------------------------------------------|
