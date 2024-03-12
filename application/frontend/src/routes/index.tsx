@@ -1,7 +1,13 @@
 import { Title, A } from "solid-start";
 import "~/root.css";
+import { getOrders } from "~/api/auth";
+import { createEffect, createSignal } from "solid-js";
 
 export default function Home(){
+
+  
+  getOrders()
+
 
 return (
   <>

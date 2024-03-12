@@ -1,5 +1,17 @@
 
 
+  export async function getOrders(){
+    const url = 'http://127.0.0.1:8000/orders/';
+    await fetch(url, {
+      method: 'GET',
+    })
+    .then(response => response.json())
+    .then(response => response)
+    .catch(err => console.error(err));
+  }
+
+  
+
 export class auth {
   private linkToServer = "https://jsonplaceholder.typicode.com/";
   link: string;

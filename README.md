@@ -6,6 +6,12 @@
 2. Framework django: ```python -m pip install django```
 3. Модуль для релизации rest-api: ```python -m pip install djangorestframework```
 4. CORS: ```python -m pip install django-cors-headers```
+5. Запуск env: ```.\env\Scripts\activate ```
+
+## backend
+- Запуск backend: ```python manage.py runserver```
+
+
 ## Описание коммитов
 | Название | Описание                                                        |
 |----------|-----------------------------------------------------------------|

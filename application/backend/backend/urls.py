@@ -21,5 +21,5 @@ from backend_api.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('orders/', OrdersView.as_view(), name='orders'),
+    path('', OrdersView.as_view(), name='orders'),
 ]
