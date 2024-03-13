@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+    frontend:
+        image: sf-frontend:latest
+        restart: always
+        build:
+            dockerfile: Dockerfile
+            context: frontend
+        ports:
+            - "$port_frontend:3000"
+      
