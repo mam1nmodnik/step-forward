@@ -9,7 +9,7 @@
 5. Запуск env: ```.\env\Scripts\activate ```
 
 ## backend
-- Запуск backend: ```python manage.py runserver```
+- Запуск backend: ```python manage.py runserver``` (или скорее всего ```python step-forward\application\backend\manage.py runserver```)
 
 
 ## Описание коммитов
