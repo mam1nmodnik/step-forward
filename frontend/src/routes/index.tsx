@@ -1,20 +1,18 @@
-import { Title, A } from "solid-start";
+import { Title, } from "solid-start";
 import "~/root.css";
-import { getOrders } from "~/api/auth";
-import { createEffect, createSignal } from "solid-js";
+import "../style/main.css"
+
+import Header from "~/components/Layouts/Header/Header";
+import Main from "~/components/Layouts/Main/Main";
 
 export default function Home(){
-
-  
-  getOrders()
-
-
-return (
-  <>
-    <Title>Step Forward</Title>
-    <main class="flex items-center justify-center">   
-        <h1 class="flex">ТУТ скоро будут подкрадули</h1>
-    </main>
+  return (
+    <>
+      <Title>Step Forward</Title>
+      <div class="flex flex-col w-[95.5rem]">   
+        <Header/>
+        <Main/>
+      </div> 
     </>
-  );
+  )
 }
