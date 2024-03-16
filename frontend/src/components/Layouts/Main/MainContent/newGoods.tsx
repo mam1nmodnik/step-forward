@@ -3,9 +3,7 @@ import CardProduct from "../../../../components/Widgets/cardProduct";
 
 let array = [
     {link: '#', title: 'Название товара', price: 'цена товара'},
-    {link: '#', title: 'Название товара', price: 'цена товара'},
-    {link: '#', title: 'Название товара', price: 'цена товара'},
-    {link: '#', title: 'Название товара', price: 'цена товара'},
+    
 ]
     const content = array.map((item) => (
         <CardProduct {...item} />

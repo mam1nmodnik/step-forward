@@ -15,7 +15,7 @@ export default function About(){
                 <AccordionItem value="item-1" class="">
                     <AccordionTrigger> 
                         <div class="flex items-center gap-[1.125rem]">
-                            <img src="/img/svg/iconSelect.svg" alt="" srcset="" />
+                            <img src="/img/svg/iconSelect.svg" alt="" srcset=""  class="w-[2.778rem] h-[3.068rem]"/>
                             <p class="Text-inter-36px-normal">Heading</p>
                         </div>
                     </AccordionTrigger>
@@ -26,7 +26,7 @@ export default function About(){
                 <AccordionItem value="item-1" class="">
                     <AccordionTrigger> 
                         <div class="flex items-center gap-[1.125rem]">
-                            <img src="/img/svg/iconSelect.svg" alt="" srcset="" />
+                            <img src="/img/svg/iconSelect.svg" alt="" srcset="" class="w-[2.778rem] h-[3.068rem]"/>
                             <p class="Text-inter-36px-normal">Heading</p>
                         </div>
                     </AccordionTrigger>
