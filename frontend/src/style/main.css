@@ -1,0 +1,79 @@
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+  
+  
+  
+    /* Font */
+    .Text-inter-24px{
+      @apply font-sans text-2xl font-normal
+    }
+  
+    .Text-inter-98px{
+      @apply font-sans text-[6.125rem] font-bold 
+    }
+  
+    .Text-inter-24px-card{
+      @apply font-sans font-medium text-[1.5rem] leading-[1.813rem] text-white
+    }
+    .Text-inter-36px{
+      @apply font-sans font-bold text-[2.25rem] leading-[2.75rem] text-white
+    }
+    .Text-inter-36px-normal{
+      @apply font-sans font-normal text-[2.25rem] leading-[2.75rem] text-white
+    }
+    .Text-inter-36px-normal-black{
+      @apply font-sans font-normal text-[2.25rem] leading-[2.75rem] 
+    }
+    .Text-inter-36px-medium-white{
+      @apply font-sans font-medium text-[2.25rem] leading-[2.75rem] text-white
+    }
+    
+    .Text-inter-24px-price{
+      @apply font-sans font-medium text-[1.5rem] leading-[1.813rem] 
+    }
+    
+    .Text-inter-24px-rewiews{
+      @apply font-sans font-medium text-[1.5rem] leading-[1.813rem] text-my-blueRewiews
+    }
+    .Text-inter-24px-rewiews-opacity-75{
+      @apply font-sans font-normal text-[1.5rem] leading-[1.813rem] text-white opacity-75
+    }
+    .Text-inter-16px-rewiews-opacity-35{
+      @apply font-sans font-normal text-[1rem] leading-[1.813rem] text-white opacity-35
+    }
+    html {
+      font-size: 3vw;
+    }
+    @media screen and (min-width: 640px) {
+      html {
+        font-size: 16px;
+      }
+    }
+    @media screen and (min-width: 2060px) {
+      html {
+        font-size: 0.83vw;
+      }
+    }
+  
+  
+    /* Color */
+
+  
+  html,
+  body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+  }
+  
+  
