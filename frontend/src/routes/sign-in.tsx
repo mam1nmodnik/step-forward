@@ -1,5 +1,7 @@
-import { createSignal } from "solid-js"
+import { createEffect, createSignal } from "solid-js"
 import { json } from "solid-start";
+
+import { getOrders } from "~/api/api";
 
 export default function Signin(){
 
@@ -41,6 +43,16 @@ export default function Signin(){
             console.log('Запрос на сервер был отправлен')
         }
     }
+
+    createEffect(() =>{
+        try{
+            getOrders()
+        }catch(error){
+            console.log(error);
+        }finally{
+            console.log('Запрос на сервер был отправлен')
+        }
+    })
 
     return (
         <main class="flex items-center justify-center h-screen">

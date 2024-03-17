@@ -1,7 +1,4 @@
 export default function Header(){
-    
-    
-    
     return (
         <div class="lg:flex items-center justify-between lg:w-full h-[5rem] px-[3rem] py-[1.5rem] rounded-[2.5rem] mt-[1.5rem] bg-my-blueHeader hidden select-none">
             <img src="/img/svg/logo.svg" alt="StepForwardLogo" class="w-[4rem]" draggable="false"/>

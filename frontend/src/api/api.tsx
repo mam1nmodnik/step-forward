@@ -1,14 +1,12 @@
 
 
-  // export async function getOrders(){
-  //   const url = '';
-  //   await fetch(url, {
-  //     method: 'GET',
-  //   })
-  //   .then(response => response.json())
-  //   .then(response => response)
-  //   .catch(err => console.error(err));
-  // }
+  export async function getOrders(){
+    const url = 'https://jsonplaceholder.typicode.com/posts';
+    const response = await fetch(url, {
+      method: 'GET',
+    })
+    return response.json();
+  }
 
   
 

@@ -1,4 +1,5 @@
 import { Show } from "solid-js";
+import MyButton from "~/components/ui/myButton";
 
 
 
@@ -6,6 +7,8 @@ let array = [
     {name: 'олег', rewiews: '4', description: 'блин класс круто', date: '10.03.2024'},
     {name: 'мама максима', rewiews: '5', description: 'блин класс круто', date: '10.03.2024'},
     {name: 'папа максима', rewiews: '1', description: 'ну такое', date: '10.03.2024'},
+    {name: 'максим', rewiews: '4', description: 'блин класс круто', date: '10.03.2024'},
+    {name: 'максим', rewiews: '4', description: 'блин класс круто', date: '10.03.2024'},
     {name: 'максим', rewiews: '4', description: 'блин класс круто', date: '10.03.2024'},
 ]
     const content = array.map((item) => (
@@ -15,7 +18,7 @@ let array = [
                     <img src="https://avatars.githubusercontent.com/u/105350465?s=400&u=d09c4279f7ad8f44554c44466d32f6a9381ba007&v=4" alt="" class="w-[6rem] h-[6rem] rounded-[16rem]"/>
                     <p class="Text-inter-36px-medium-white">{item.name}</p>
                 </div>                            
-                <div class="flex items-center justify-center w-[3.375rem] h-[3.375rem] rounded-[5.938rem] box-border border-[0.063rem] border-solid border-[#B0E3F9]" >
+                <div class="flex items-center justify-center min-w-[3.375rem] h-[3.375rem] rounded-[5.938rem] box-border border-[0.063rem] border-solid border-[#B0E3F9]" >
                     <p class="Text-inter-24px-rewiews">{item.rewiews}/5</p>
                 </div>
             </div>
@@ -26,16 +29,17 @@ let array = [
 
 export default function Rewiews(){
     return (
-        <div class="mb-[200px] mt-[3rem]">
+        <div class="mt-[3rem]">
             <div class="flex items-end justify-between mb-[1.5rem]">
                 <h1 class="Text-inter-98px">Отзывы клиентов</h1>
                 <a href="">Больше отзывов</a>
             </div>
-            <div class="flex flex-wrap gap-[3.688rem]">
+            <div class="grid gap-x-[3.688rem] gap-y-[1.5rem] grid-cols-3 mb-[2rem]">
                 <Show when={content} fallback={<p>Загрузка</p>}>
                     {content}
                 </Show>
             </div>
+            <MyButton width="w-full" description="Оставить отзыв"/>
         </div>
     )
 }
