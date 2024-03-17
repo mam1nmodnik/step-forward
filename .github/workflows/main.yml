@@ -3,7 +3,7 @@ name: Deploy Docker Compose
 on:
   push:
     branches:
-      - frontend  # Укажите название вашей ветки
+      - main  # Укажите название вашей ветки
 
 jobs:
   deploy:
