@@ -3,13 +3,18 @@ name: Deploy Docker Compose
 on:
   push:
     branches:
-      - frontend  # Укажите название вашей ветки
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Use Node.js 20
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20.x'
+
     - name: Checkout code
       uses: actions/checkout@v2
 
@@ -17,16 +22,18 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y docker.io
+        docker --version  # Проверим версию Docker после установки
+        sudo systemctl status docker  # Проверим статус Docker сервиса
 
     - name: Log into Docker Hub
       run: echo "${{ secrets.DOCKER_HUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin
 
     - name: Build and push Docker images
       run: |
-        docker-compose -f ../docker-compose.yml build
-        docker-compose -f ../docker-compose.yml push
+        docker-compose -f docker-compose.yml build
+        docker-compose -f docker-compose.yml push
 
     - name: Pull and run Docker containers
       run: |
-        docker-compose -f ../docker-compose.yml pull
-        docker-compose -f ../docker-compose.yml up -d
+        docker-compose -f docker-compose.yml pull
+        docker-compose -f docker-compose.yml up -d
