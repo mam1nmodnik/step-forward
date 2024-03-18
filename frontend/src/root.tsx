@@ -21,7 +21,7 @@ export default function Root() {
         <Meta charset="utf-8" />
         <Meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Body class="flex w-full ">
+      <Body class="flex w-full">
         <Suspense>
           <ErrorBoundary>
             <Routes>

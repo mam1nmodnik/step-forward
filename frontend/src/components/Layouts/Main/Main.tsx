@@ -5,11 +5,11 @@ import Rewiews from "./MainContent/rewiews";
 
 export default function Main(){
     return (
-        <div>
+        <>
             <NewGoods />
             <About/>
             <Rewiews/>
             <Contacts/>
-        </div>
+        </>
     )
 }

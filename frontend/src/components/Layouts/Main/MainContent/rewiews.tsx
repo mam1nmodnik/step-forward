@@ -32,7 +32,7 @@ export default function Rewiews(){
         <div class="mt-[3rem]">
             <div class="flex items-end justify-between mb-[1.5rem]">
                 <h1 class="Text-inter-98px">Отзывы клиентов</h1>
-                <a href="">Больше отзывов</a>
+                <a href="" class="Text-inter-24px">Больше отзывов</a>
             </div>
             <div class="grid gap-x-[3.688rem] gap-y-[1.5rem] grid-cols-3 mb-[2rem]">
                 <Show when={content} fallback={<p>Загрузка</p>}>
