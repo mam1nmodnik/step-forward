@@ -12,16 +12,17 @@
     .Text-inter-24px{
       @apply font-sans text-2xl font-normal
     }
-  
-    .Text-inter-98px{
-      @apply font-sans text-[6.125rem] font-bold 
+    .Text-inter-24px-white{
+      @apply font-sans text-[1.5rem] leading-[1.813rem] font-normal text-white 
     }
-  
+    .Text-inter-98px{
+      @apply font-sans xl:text-[6.125rem] xl:leading-[7.25rem] sm2:text-[4rem] sm2:leading-[4.813rem] text-[3rem] leading-[3.625rem] md:font-bold font-medium w-fit
+    }
     .Text-inter-24px-card{
       @apply font-sans font-medium text-[1.5rem] leading-[1.813rem] text-white
     }
     .Text-inter-36px{
-      @apply font-sans font-bold text-[2.25rem] leading-[2.75rem] text-white
+      @apply font-sans font-bold text-[1.5rem] sm3:text-[2.25rem] leading-[2.75rem] text-white 
     }
     .Text-inter-36px-normal{
       @apply font-sans font-normal text-[2.25rem] leading-[2.75rem] text-white

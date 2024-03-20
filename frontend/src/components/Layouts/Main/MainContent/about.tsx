@@ -8,8 +8,8 @@ import {
 
 export default function About(){
     return (
-        <div class="mt-[11.313rem] select-none mb-[100]">
-            <h1 class="Text-inter-98px ">Пару слов о нас</h1>
+        <div class=" mt-[3rem]  sm3:mt-[11.313rem] select-none mb-[100] w-full  ">
+            <h1 class="Text-inter-98px">Пару слов о нас</h1>
             <div class="flex flex-col gap-[0.75rem] mt-[1.5rem] w-full">
             <Accordion multiple={false} collapsible class="bg-my-newBlack w-full px-[2rem] rounded-[3rem] cursor-pointer">
                 <AccordionItem value="item-1" class="">
@@ -19,7 +19,7 @@ export default function About(){
                             <p class="Text-inter-36px-normal">Heading</p>
                         </div>
                     </AccordionTrigger>
-                    <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
+                    <AccordionContent class="Text-inter-24px-white">Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
                 </AccordionItem>
             </Accordion>
             <Accordion multiple={false} collapsible class="bg-my-newBlack w-full px-[2rem] rounded-[3rem] cursor-pointer">
@@ -30,7 +30,7 @@ export default function About(){
                             <p class="Text-inter-36px-normal">Heading</p>
                         </div>
                     </AccordionTrigger>
-                    <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
+                    <AccordionContent class="Text-inter-24px-white">Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
                 </AccordionItem>
             </Accordion>
             </div>

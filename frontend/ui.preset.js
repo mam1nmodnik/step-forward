@@ -8,11 +8,18 @@ module.exports = {
     container: {
       center: true,
       padding: "2rem",
-      screens: {
-        "3xl": "1920px"
-      }
     },
-    
+    screens: {
+      'sm3': '360px',
+      'sm2': '480px',
+      'sm': '600px',
+      'md': '770px',
+      'lg': '1025px',
+      'xl': '1280px', 
+      'flexgap': '1400px',
+      '2xl': '1600px',
+      "3xl": "1920px"
+    },
     extend: {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
@@ -72,7 +79,7 @@ module.exports = {
          blueHeader: '#B0E3F93D',
          newBlack: '#181818',
          newWhite: '#FFFFFF',
-         blueRewiews: '#B0E3F9'
+         blueRewiews: '#B0E3F9',
         }
       },
       borderRadius: {

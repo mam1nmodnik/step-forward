@@ -5,7 +5,7 @@ import Rewiews from "./MainContent/rewiews";
 
 export default function Main(){
     return (
-        <>
+        <> 
             <NewGoods />
             <About/>
             <Rewiews/>
