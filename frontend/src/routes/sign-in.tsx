@@ -43,8 +43,7 @@ export default function Signin(){
             console.log('Запрос на сервер был отправлен')
         }
     }
-
-    createEffect(() =>{
+    const effectReturn = () => {
         try{
             getOrders()
         }catch(error){
@@ -52,7 +51,10 @@ export default function Signin(){
         }finally{
             console.log('Запрос на сервер был отправлен')
         }
-    })
+    }
+    createEffect(() =>{
+        effectReturn()
+    },)
 
     return (
         <main class="flex items-center justify-center h-screen">

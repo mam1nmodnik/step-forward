@@ -14,7 +14,7 @@ export default function Home(){
 
  
   return (
-    <main class=" flex flex-col mt-[1.5rem] mx-[2rem]  lg:mx-[2.5rem] max-w-[95.5rem]">
+    <main class="flex flex-col my-[1.5rem] mx-[2rem]  lg:mx-[2.5rem] max-w-[95.5rem]">
       <Title>Step Forward</Title>
       <Header/>
       <MobileMenu/>

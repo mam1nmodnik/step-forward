@@ -9,14 +9,23 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 // toggle mobile menu
-export const [addClass, setAddClass] = createSignal<boolean>(false);
+interface addClassType {
+  formModal: boolean;
+  mobileMenu: boolean;
+}
+
+export const [addClass, setAddClass] = createSignal<addClassType>({
+  formModal: false,
+  mobileMenu: false,
+});
+
 export const toggleMenuClose = () => {
     const body = document.getElementsByTagName("body");
     if(!body){
       return;
     }
-    body[0].style.overflow = addClass() ? 'auto' : 'hidden'
-    setAddClass(!addClass())
+    body[0].style.overflow = addClass() ? '' : 'hidden'
+    setAddClass( {...addClass(), mobileMenu: !addClass().mobileMenu})
 } 
 
 export const toggleMenuOpen = () => {
@@ -24,6 +33,25 @@ export const toggleMenuOpen = () => {
   if(!body){
     return;
   }
-  body[0].style.overflow = !addClass() ? 'hidden' : 'auto'
-  setAddClass(!addClass())
+  body[0].style.overflow = !addClass() ? 'hidden' : ''
+  setAddClass({...addClass(), mobileMenu: !addClass().mobileMenu})
+} 
+
+
+export const toggleFormClose = () => {
+  const body = document.getElementsByTagName("body");
+  if(!body){
+    return;
+  }
+  body[0].style.overflow = addClass() ? '' : 'hidden'
+  setAddClass( {...addClass(), formModal: !addClass().formModal})
+} 
+
+export const toggleFormOpen = () => {
+const body = document.getElementsByTagName("body");
+if(!body){
+  return;
+}
+body[0].style.overflow = !addClass() ? 'hidden' : ''
+setAddClass({...addClass(), formModal: !addClass().formModal})
 } 

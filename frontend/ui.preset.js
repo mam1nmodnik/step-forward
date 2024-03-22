@@ -78,6 +78,7 @@ module.exports = {
         my: {
          blueHeader: '#B0E3F93D',
          newBlack: '#181818',
+         newBlack73: '#181818B3',
          newWhite: '#FFFFFF',
          blueRewiews: '#B0E3F9',
         }

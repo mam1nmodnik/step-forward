@@ -10,7 +10,7 @@
   
     /* Font */
     .Text-inter-24px{
-      @apply font-sans text-2xl font-normal
+      @apply font-sans text-[1.5rem] leading-[1.813rem] font-normal
     }
     .Text-inter-24px-white{
       @apply font-sans text-[1.5rem] leading-[1.813rem] font-normal text-white 
