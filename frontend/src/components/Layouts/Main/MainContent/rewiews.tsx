@@ -1,7 +1,7 @@
 import { Show } from "solid-js";
 import MyButton from "~/components/ui/myButton";
 import { Skeleton } from "~/components/ui/skeleton";
-import { toggleFormOpen } from "~/lib/utils"
+import { toggleForm } from "~/lib/utils"
 
 
 let array = [
@@ -75,7 +75,12 @@ export default function Rewiews(){
                     </Show>
                 </div>
             </Show>
-            <MyButton width="w-full" description="Оставить отзыв" onClick={toggleFormOpen}/>
+            <MyButton 
+                class="w-full" 
+                description="Оставить отзыв" 
+                onClick={(e: Event) => toggleForm(e)}
+                id="rewiews"
+            />
         </div>
     )
 }

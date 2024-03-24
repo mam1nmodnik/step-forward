@@ -1,4 +1,4 @@
-import { Title, } from "solid-start";
+import { Title } from "solid-start";
 
 import "~/root.css";
 import "../style/main.css"
@@ -7,6 +7,7 @@ import Header from "~/components/Layouts/Header/Header";
 import Main from "~/components/Layouts/Main/Main";
 import Footer from "~/components/Layouts/Footer/Footer";
 import MobileMenu from "~/components/Layouts/Header/HeaderMobileMenu";
+import { Show, Suspense } from "solid-js";
 
 
 
@@ -19,7 +20,7 @@ export default function Home(){
       <Header/>
       <MobileMenu/>
       <Main/>
-      <Footer/>
+      <Footer/>    
     </main>
   )
 }

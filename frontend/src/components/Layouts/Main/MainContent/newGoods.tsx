@@ -1,7 +1,7 @@
 import { Show } from "solid-js";
 import CardProduct from "../../../../components/Widgets/cardProduct";
 import { Skeleton } from "~/components/ui/skeleton";
-import { addClass, toggleMenuOpen } from "~/lib/utils";
+import { addClass, toggleMenu } from "~/lib/utils";
 
 
 let array = [
@@ -32,7 +32,7 @@ export default function NewGoods(){
         <div class="lg:mt-[3rem] select-none w-full ">
             <div class="flex justify-between mb-[1.5rem]">
                 <h1 class="Text-inter-98px">Новинки</h1>
-                <img src="/img/svg/mobButton.svg" alt="" class={` block lg:hidden  w-[4.875rem] ${addClass() ? "hidden" : ""}`} onClick={toggleMenuOpen}/>
+                <img src="/img/svg/mobButton.svg" alt="" class={` block lg:hidden  w-[4.875rem] ${addClass().mobileMenu ? "hidden" : ""}`} onClick={toggleMenu}/>
             </div> 
             <div class="not-prose   rounded-xl overflow-hidden ">
                 <div class=" rounded-xl overflow-auto">

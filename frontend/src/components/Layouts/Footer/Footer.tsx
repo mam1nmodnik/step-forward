@@ -18,7 +18,7 @@ export default function Footer(){
                     <div class="inline-flex flex-col">
                         <p>Designer <a href="" class={styleText}>Stepan Korovin</a></p>
                         <p>Frontend dev <a href="" class={styleText}>Serebryakov Danil</a></p>
-                        <p>Backend dev <a href="" class={styleText}>Davidov Maksim</a></p>
+                        <p>Backend dev <a href="" class={styleText}>Davydov Maxim</a></p>
                     </div>   
                 </div> 
             </div>
