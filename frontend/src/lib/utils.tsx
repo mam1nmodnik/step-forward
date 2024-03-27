@@ -24,12 +24,11 @@ export const [addClass, setAddClass] = createSignal<addClassType>({
 export const toggleMenu = () => {
   const body = document.getElementsByTagName("body");
   if(!body){
-    
     return;
   }
   body[0].style.overflow = addClass().mobileMenu ? '' : 'hidden'
   setAddClass( {...addClass(), mobileMenu: !addClass().mobileMenu})
-} 
+}
 
 export const toggleForm = (e: Event) => {
   const body = document.getElementsByTagName("body");
@@ -49,7 +48,7 @@ export const toggleForm = (e: Event) => {
       setAddClass({...addClass(), contentFormModal: true})
     }
   }
-} 
+}
 
 export const swipe = () => {
   setAddClass({...addClass(), contentFormModal: !addClass().contentFormModal})

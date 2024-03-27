@@ -1,9 +1,12 @@
 {
   "name": "frontend",
   "scripts": {
-    "dev": "solid-start dev",
-    "build": "solid-start build",
-    "start": "solid-start start"
+    "start": "npx http-server ./dist",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "type": "module",
   "devDependencies": {
@@ -21,6 +24,7 @@
     "@solidjs/router": "^0.8.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "firebase": "^10.9.0",
     "solid-icons": "^1.1.0",
     "solid-js": "^1.8.5",
     "solid-start": "^0.3.10",

@@ -4,17 +4,10 @@ import { Skeleton } from "~/components/ui/skeleton";
 import { toggleForm } from "~/lib/utils"
 
 
-let array = [
-    {name: 'олег', rewiews: '4', description: 'блин класс круто', date: '10.03.2024'}, 
-    {name: 'олег', rewiews: '4', description: 'блин класс круто', date: '10.03.2024'}, 
-    {name: 'олег', rewiews: '4', description: 'блин класс круто', date: '10.03.2024'}, 
-    {name: 'олег', rewiews: '4', description: 'блин класс круто', date: '10.03.2024'}, 
-    {name: 'олег', rewiews: '4', description: 'блин класс круто', date: '10.03.2024'}, 
-    {name: 'олег', rewiews: '4', description: 'блин класс круто', date: '10.03.2024'}, 
-]
+let array:any = []
     
 
-const content = array.map((item, index) => {
+const content = array.map(({item, index}: any) => {
     if(index < 6){
         return (
             <div class="flex flex-col gap-[0.75rem] bg-my-newBlack  2xl:max-w-[29.375rem] h-[16.5rem] px-[1.5rem] 2xl:px-[3rem] py-[3rem] rounded-[3rem] ">
@@ -31,11 +24,10 @@ const content = array.map((item, index) => {
                 <p class="Text-inter-16px-rewiews-opacity-35">{item.date}</p>
             </div>
         )
-    }
-    
+    } 
 })
 
-    const skelet = array.map((item, index) => {
+    const skelet = array.map(({item, index}: any) => {
         if(index < 6){
             return (
                 <Skeleton class="flex flex-col gap-[0.75rem]  w-[29.375rem] h-[16.5rem] px-[3rem] py-[3rem] rounded-[3rem] ">

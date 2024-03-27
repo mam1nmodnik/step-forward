@@ -1,14 +1,14 @@
-import { JSX } from "solid-js";
+import { JSX, children } from "solid-js";
 
- interface myButtonType {
+interface myButtonType {
     class: string;
     description: string;
     id?: string;
-    onClick?: (e: Event)=> void;
+    onClick?: (e: Event) => void;
 }
 
-
 export default function MyButton({...props}: myButtonType): JSX.Element{
+    const child = children(() => props.description)
     return(
         <button 
             type="submit"
@@ -16,7 +16,7 @@ export default function MyButton({...props}: myButtonType): JSX.Element{
             onClick={props.onClick}
             id={props.id}
         >
-            {props.description}
+            { child() }
         </button>
     )
 }

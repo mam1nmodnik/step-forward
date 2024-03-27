@@ -25,7 +25,7 @@ export default function Root() {
       </Head>
       <Body class="flex w-full" style=''>
         <Suspense>  
-          <ErrorBoundary>
+          <ErrorBoundary fallback={(err) => <p>Error: {err.message}</p>} >
             <Routes>
               <FileRoutes />
             </Routes>
