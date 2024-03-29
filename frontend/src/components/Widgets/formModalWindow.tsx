@@ -1,7 +1,8 @@
-import { createMemo, createSignal } from "solid-js";
+import { Match, Switch, createMemo, createSignal } from "solid-js";
 import MyButton from "../ui/myButton"
 import { addClass , toggleForm,  swipe } from "~/lib/utils"
 import { postReviewForm, postOfferForm } from "~/api/api";
+import { Portal } from "solid-js/web";
 
 
 export default function FormModalWindow(){
@@ -220,6 +221,8 @@ export default function FormModalWindow(){
     }
     
     return (
+        <Portal>
+
             <div class={`background-blur fixed inset-0 z-[11] z-[101] h-full w-full bg-[rgba(0,0,0,.8)] backdrop-blur  ${addClass().formModal ? '' : "hidden"}  `}> 
                 <div class={` min-w-[50vw] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] select-none ${addClass().formModal ? '' : "hidden"} `}>
                     <div class="flex flex-col w-auto px-[4rem] py-[4rem] p rounded-[3rem] gap-[3rem] bg-my-newBlack73">
@@ -249,12 +252,20 @@ export default function FormModalWindow(){
                             </div>
                             <img src="/img/svg/closeIconModelForm.svg" alt="" class="w-[2.313rem] cursor-pointer" onclick={toggleForm}/>
                         </div>
-                            {
-                                addClass().contentFormModal ? rewiewForm() : offer()
-                            }
+                        <Switch fallback={<div>Загрузка...</div>}>
+                            <Match when={addClass().contentFormModal}>
+                                {rewiewForm()}
+                            </Match>
+                            <Match when={!addClass().contentFormModal }>
+                                {offer()}
+                            </Match>
+                        </Switch>
                     </div>
                 </div>
             </div>
+
+        </Portal>
+            
     )
 }   
 

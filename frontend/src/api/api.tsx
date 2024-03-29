@@ -1,7 +1,7 @@
 
 
 export async function getOrders(){
-  const url = 'https://jsonplaceholder.typicode.com/posts';
+  const url = 'https://jsonplaceholder.typicode.com/posts/6';
   const response = await fetch(url, {
       method: 'GET',
   })

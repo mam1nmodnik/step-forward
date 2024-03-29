@@ -1,30 +1,40 @@
+import { A } from "@solidjs/router"
+import { For } from "solid-js";
+import {  toggleMenu } from "~/lib/utils"
+
+import MobileMenu from "./HeaderMobileMenu"
+import header from '~/json/headerLink.json'
+import headerIcon from '~/json/headerLinkIcon.json'
+
 export default function Header(){
     const styletext = "Text-inter-24px active:text-my-blueRewiews hover:opacity-50 "
+    
+   
     return (
         <>
+            <img src="/img/svg/mobButton.svg" alt="" class={` block lg:hidden  w-[4.875rem] cursor-pointer`} onClick={toggleMenu}/>
+            <MobileMenu/>
             <div class="lg:flex items-center justify-between lg:w-full h-[5rem] px-[3rem] py-[1.5rem] rounded-[2.5rem]  bg-my-blueHeader hidden select-none">
-                <img src="/img/svg/logo.svg" alt="StepForwardLogo" class="w-[4rem]" draggable="false"/>
+               <A href="/"><img src="/img/svg/logo.svg" alt="StepForwardLogo" class="w-[4rem] cursor-pointer " draggable="false"/></A>
                 
                     <div class="flex items-center gap-[1.5rem] ">
-                        <a href="" class={styletext}>Новинки</a>
-                        <a href="" class={styletext}>Мужское</a>
-                        <a href="" class={styletext}>Женское</a>
-                        <a href="" class={styletext}>Бренды</a>
-                        <a href="" class={styletext}>Sale</a>
+                        <For each={header} fallback={<div>Загрузка...</div>}>
+                            {(item, index) => (
+                                <A href={item.link} class={styletext}>
+                                    {item.title}
+                                </A>
+                            )}
+                        </For>
                     </div>
+
                     <div class="flex gap-[1.5rem]">
-                        <a href="">
-                            <img src="/img/svg/search.svg" alt="" class="w-[2rem]" draggable="false"/>
-                        </a>
-                        <a href="">
-                            <img src="/img/svg/profile.svg" alt="" class="w-[2rem]" draggable="false"/>
-                        </a>
-                        <a href="">
-                            <img src="/img/svg/heart.svg" alt="" class="w-[2rem]" draggable="false"/>
-                        </a>
-                        <a href="">
-                            <img src="/img/svg/bag.svg" alt="" class="w-[2rem]" draggable="false"/>
-                        </a>
+                        <For each={headerIcon} fallback={<div>Загрузка...</div>}>
+                            {(item, index) => (
+                                <A  href={item.link}>
+                                    <img src={item.linkIcon} alt="" class="w-[2rem]" draggable="false"/>
+                                </A>
+                            )}
+                        </For>
                     </div>
             </div>
         </>

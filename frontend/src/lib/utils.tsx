@@ -53,4 +53,3 @@ export const toggleForm = (e: Event) => {
 export const swipe = () => {
   setAddClass({...addClass(), contentFormModal: !addClass().contentFormModal})
 }
-

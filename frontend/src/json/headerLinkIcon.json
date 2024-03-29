@@ -1,0 +1,18 @@
+[
+    {
+       "link":"",
+       "linkIcon": "/img/svg/search.svg"
+    },
+    {
+       "link":"/profile/",
+       "linkIcon":"/img/svg/profile.svg"
+    },
+    {
+       "link":"",
+       "linkIcon":"/img/svg/heart.svg"
+    },
+    {
+       "link":"",
+       "linkIcon":"/img/svg/bag.svg"
+    }
+]
