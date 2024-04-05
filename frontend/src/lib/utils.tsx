@@ -1,19 +1,22 @@
+import { createSignal } from "solid-js"
+import { createStore } from "solid-js/store"
 
 import type { ClassValue } from "clsx"
 import { clsx } from "clsx"
-import { createSignal } from "solid-js"
 import { twMerge } from "tailwind-merge"
+
+
+
+import { addClassType, ProductType } from "~/typing/typing"
+
+
+
+
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-// toggle mobile menu
-interface addClassType {
-  formModal: boolean;
-  contentFormModal: boolean;
-  mobileMenu: boolean;
-}
 
 export const [addClass, setAddClass] = createSignal<addClassType>({
   formModal: false,
@@ -53,3 +56,4 @@ export const toggleForm = (e: Event) => {
 export const swipe = () => {
   setAddClass({...addClass(), contentFormModal: !addClass().contentFormModal})
 }
+

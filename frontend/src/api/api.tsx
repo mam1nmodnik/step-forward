@@ -1,12 +1,15 @@
+import { Card, Post, ProductType } from "~/typing/typing";
 
-
-export async function getOrders(){
-  const url = 'https://jsonplaceholder.typicode.com/posts/6';
-  const response = await fetch(url, {
-      method: 'GET',
-  })
-  return response.json();
+export async function GETProductAll(): Promise<Card[]> {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    return response.json();
 }
+
+export const getPostById = async (id: string) => {
+  const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+  return await response.json()
+}
+
 
 export async function postReviewForm(
   rated: number, 
@@ -30,7 +33,6 @@ export async function postReviewForm(
     },
     body: JSON.stringify(data)
   })
-
   return response.json();
 }
 

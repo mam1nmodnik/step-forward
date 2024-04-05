@@ -47,6 +47,7 @@
     .Text-inter-16px-rewiews-opacity-35{
       @apply font-sans font-normal text-[1rem] leading-[1.813rem] text-white opacity-35
     }
+    
     html {
       font-size: 3vw;
     }

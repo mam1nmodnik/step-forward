@@ -1,9 +1,10 @@
 import { Match, Switch, createMemo, createSignal } from "solid-js";
-import MyButton from "../ui/myButton"
+import { Portal } from "solid-js/web";
+import MyButton from "../../../ui/myButton"
 import { addClass , toggleForm,  swipe } from "~/lib/utils"
 import { postReviewForm, postOfferForm } from "~/api/api";
-import { Portal } from "solid-js/web";
 
+import { offerFormType, reviewFormType} from "~/typing/typing";
 
 export default function FormModalWindow(){
 
@@ -11,13 +12,7 @@ export default function FormModalWindow(){
     const styleBtn = 'w-fit h-fit py-[0.75rem] px-[1.5rem] rounded-[1.5rem]';
     
 
-    interface reviewFormType {
-        rated: number;
-        lastName: string;
-        firstName: string;
-        telegram: string;
-        customerКeview: string;
-    }
+    
     const [reviewFormContent, setReviewForm] = createSignal<reviewFormType>({
         rated: 0,
         lastName: '',
@@ -142,12 +137,7 @@ export default function FormModalWindow(){
     }
 
 
-    interface offerFormType {
-        lastName: string;
-        firstName: string;
-        telegram: string;
-        customerКeview: string;
-    }
+    
 
     const [offerFormContent, setOfferForm] = createSignal<offerFormType>({
         lastName: '',

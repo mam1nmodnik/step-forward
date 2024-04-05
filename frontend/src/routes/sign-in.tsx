@@ -1,6 +1,6 @@
 import { createEffect, createSignal } from "solid-js"
 import { Title } from "solid-start";
-import { getOrders } from "~/api/api";
+import { GETProductAll } from "~/api/api";
 
 
 export default function Signin(){
@@ -43,9 +43,9 @@ export default function Signin(){
             console.log('Запрос на сервер был отправлен')
         }
     }
-    const effectReturn = () => {
+    const effectReturn = async  () => {
         try{
-            getOrders()
+            console.log(await GETProductAll())
         }catch(error){
             console.log(error);
         }finally{

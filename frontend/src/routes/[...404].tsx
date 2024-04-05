@@ -1,6 +1,6 @@
 import { Title } from "solid-start";
 import { HttpStatusCode } from "solid-start/server";
-import { A } from "solid-start";
+
 import "../root.css";
 
 export default function NotFound(){
@@ -9,7 +9,7 @@ export default function NotFound(){
    <main>
       <Title>Not Found</Title>
       <HttpStatusCode code={404} />    
-    <div>
+      <div>
         Страница не найдена 
       </div>  
     </main>

@@ -1,14 +1,17 @@
 import { addClass , toggleMenu } from "~/lib/utils"
-import { For } from "solid-js"
+import { For, useContext } from "solid-js"
 import { A } from "solid-start"
+import { Portal } from "solid-js/web"
+
 import header from '~/json/headerLink.json'
 import headerIcon from '~/json/headerLinkIcon.json'
-import { Portal } from "solid-js/web"
+
+import { MyContext } from "~/Context/Provider"
 
 export default function MobileMenu() {
    
     const styletext  = "Text-inter-24px active:text-my-blueRewiews hover:opacity-50"
-    
+    const { newBasket } = useContext(MyContext);
     return (
         <>
         <Portal>
@@ -25,7 +28,7 @@ export default function MobileMenu() {
                                 <div class="flex flex-col items-end gap-[0.75rem] ">
                                     <For each={header} fallback={<div>Загрузка...</div>}>
                                         {(item, index) => (
-                                            <A href={item.link} class={styletext}>
+                                            <A href={item.link} class={styletext} onclick={toggleMenu}>
                                                 {item.title}
                                             </A>
                                         )}
@@ -33,11 +36,26 @@ export default function MobileMenu() {
                                 </div>
                                 <div class="flex gap-[1.5rem] "> 
                                     <For each={headerIcon} fallback={<div>Загрузка...</div>}>
-                                        {(item, index) => (
-                                            <A  href={item.link}>
-                                                <img src={item.linkIcon} alt="" class="w-[2rem]" draggable="false"/>
-                                            </A>
-                                        )}
+                                        {(item, index) => {
+                                                if( item.link === '/basket'){
+                                                    return (
+                                                        <A  href={item.link} class="relative" onclick={toggleMenu}>
+                                                            <img src={item.linkIcon} alt="" class="w-[2rem]" draggable="false"/>
+                                                            {
+                                                                newBasket.countBasket ? <span class="absolute top-[-0.2rem] right-[-0.4rem] font-sans font-medium text-[1rem] leading-[1.1rem]  text-black px-[0.2rem] bg-red-400 rounded-[1rem]">{newBasket.countBasket}</span> : null
+                                                            }
+                                                           
+                                                        </A>
+                                                    )
+                                                } else {
+                                                    return (
+                                                        <A  href={item.link} onclick={toggleMenu}>
+                                                            <img src={item.linkIcon} alt="" class="w-[2rem]" draggable="false"/>
+                                                        </A> 
+                                                    )
+                                                }  
+                                            }
+                                        }   
                                     </For>
                                 </div>
                             </div>

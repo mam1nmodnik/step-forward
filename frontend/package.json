@@ -20,8 +20,10 @@
   },
   "dependencies": {
     "@kobalte/core": "^0.12.5",
+    "@solid-primitives/storage": "^3.1.0",
     "@solidjs/meta": "^0.29.1",
     "@solidjs/router": "^0.8.3",
+    "@tanstack/solid-query-devtools": "^5.28.10",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "firebase": "^10.9.0",

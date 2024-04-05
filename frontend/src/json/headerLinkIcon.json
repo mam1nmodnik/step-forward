@@ -4,7 +4,7 @@
        "linkIcon": "/img/svg/search.svg"
     },
     {
-       "link":"/profile/",
+       "link":"/profile",
        "linkIcon":"/img/svg/profile.svg"
     },
     {
@@ -12,7 +12,7 @@
        "linkIcon":"/img/svg/heart.svg"
     },
     {
-       "link":"",
+       "link":"/basket",
        "linkIcon":"/img/svg/bag.svg"
     }
 ]
