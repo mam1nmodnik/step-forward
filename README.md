@@ -1,15 +1,12 @@
 ## Step Forward 
 Система для продажи. 
-## env
-Если проблемы с env, сначала удалите папку env. После чего используйте данные команды для повторной установки:
-1. Создание виртуального окружения:  ```python -m venv evn```
-2. Framework django: ```python -m pip install django```
-3. Модуль для релизации rest-api: ```python -m pip install djangorestframework```
-4. CORS: ```python -m pip install django-cors-headers```
-5. Запуск env: ```.\env\Scripts\activate ```
+ 
+- Frontend
 
-## backend
-- Запуск backend: ```python manage.py runserver``` (или скорее всего ```python step-forward\application\backend\manage.py runserver```)
+  - [Vite](https://vitejs.dev) - framework
+  - [SolidJS](https://solidjs.com) - library
+  - [Shadcn](https://solid-ui.com) - ui framework
+  - [TypeScript](https://www.typescriptlang.org) - for type safety
 
 
 ## Описание коммитов
