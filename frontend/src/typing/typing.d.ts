@@ -1,13 +1,7 @@
 
 
 
-export interface Card { 
-    id: number;
-    title: string;
-    body: string;
-    price: number;
-    count: number;
-}
+
 export interface offerFormType {
     lastName: string;
     firstName: string;
@@ -54,5 +48,4 @@ export interface newBasketType {
     countBasket: number;
     product: ProductType[];
 }
-  
-  
+

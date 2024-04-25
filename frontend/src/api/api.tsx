@@ -1,6 +1,7 @@
-import { Card, Post, ProductType } from "~/typing/typing";
+import { ProductType, Post } from "~/typing/typing";
 
-export async function GETProductAll(): Promise<Card[]> {
+export async function GETProductAll(): Promise<ProductType[]> {
+
     const response = await fetch('https://jsonplaceholder.typicode.com/posts');
     return response.json();
 }

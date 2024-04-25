@@ -1,4 +1,4 @@
-import { For, Match,  Switch,  createEffect,  createMemo,  onMount, } from "solid-js";
+import { For, Match,  Switch,  createEffect,  createMemo,  createSignal,  onMount, } from "solid-js";
 import {  createQuery } from '@tanstack/solid-query'
 
 import CardProduct from "./cardProduct";
@@ -9,11 +9,12 @@ import {  GETProductAll } from "~/api/api";
 
 export default function NewGoods() {
     
-    const state = createQuery(() => ({
-        queryKey: ['shoes'],
-        queryFn: () =>  GETProductAll(),
-      })
-    )
+    const state = createQuery(() => (
+        {
+            queryKey: ['shoes'],
+            queryFn: () =>  GETProductAll(),
+        }
+    ))
     const array = [1, 2, 3, 4];
 
     return (
