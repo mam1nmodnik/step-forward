@@ -1,9 +1,9 @@
 import { A } from "@solidjs/router";
 import { JSXElement } from "solid-js";
 
-import { Card } from "~/typing/typing";
+import { ProductType } from "~/typing/typing";
 
-export default function CardProduct({...props}: Card): JSXElement {
+export default function CardProduct({...props}: ProductType): JSXElement {
         return (
             <div class="flex flex-col  w-[19.5rem] sm3:max-w-[22.938rem] xl:max-w-[20.875rem] 2xl:max-w-[22.75rem] min-w-[20.875rem] h-[38.938rem] p-[1.5rem] bg-my-newBlack  rounded-[1.5rem]">
                 <A href={`/shoes/${props.id}`} class="flex flex-col gap-[3rem]">

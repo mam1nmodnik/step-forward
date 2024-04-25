@@ -14,23 +14,20 @@ import { MyContext } from "~/Context/Provider"
 
 
 export default function ShoesId(){
-   
-    const { addInBascket } = useContext(MyContext);
+        const { addInBascket } = useContext(MyContext);
     
         const params = useParams();
-        const [id , setId] = createSignal(params.id)
+
         const state =  createQuery(() => ({
             queryKey: [`shoes`],
             queryFn: () =>  getPostById(params.id),
             enabled: !!params.id,
             })
         )
-        createEffect(()=> {
-            console.log(id());
-            state.refetch()
-        })      
-       
-              
+        // createEffect(()=> {
+        //     console.log(id());
+        //     state.refetch()
+        // })      
     return (    
         <div class="flex flex-col gap-[1.5rem] Text-inter-36px-normal-black">     
             <Switch> 

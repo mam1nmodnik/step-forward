@@ -17,28 +17,34 @@ export const Provider = (props: any) => {
     countBasket: 0,
     product: [],
   });
- 
+
   const updateLocalstorageBasket = ()  => {
     const storedBasket = localStorage.getItem('basket');
     if (storedBasket) {
-      const product = JSON.parse(storedBasket);
-      console.log(product)
-       setNewBasket(product)
+      const product = JSON.parse(storedBasket); 
+      setNewBasket(product)
+      // console.log(product)
     }
   }
-  onMount(()=> {
-    console.log(updateLocalstorageBasket())
-   return updateLocalstorageBasket()
+  
+  onMount( ()=> {
+    return updateLocalstorageBasket()
   })
 
   const addInBascket = (data: any) =>  {
     const updatedBasket = [...newBasket.product, data];
-    setNewBasket("product" , updatedBasket);
-    setNewBasket('countBasket', updatedBasket.length);
-    localStorage.setItem('basket', JSON.stringify(updatedBasket));
-    console.log(updatedBasket);
-  } 
 
+    setNewBasket({ 
+      product: updatedBasket, 
+      countBasket: updatedBasket.length
+    });
+    
+    localStorage.setItem(
+      'basket',
+    JSON.stringify(newBasket)
+    );
+    // console.log(newBasket);
+  } 
   return (
     <QueryClientProvider  client={queryClient}>
       <MyContext.Provider value={{

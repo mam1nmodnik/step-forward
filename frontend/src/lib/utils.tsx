@@ -1,5 +1,4 @@
 import { createSignal } from "solid-js"
-import { createStore } from "solid-js/store"
 
 import type { ClassValue } from "clsx"
 import { clsx } from "clsx"
@@ -7,7 +6,7 @@ import { twMerge } from "tailwind-merge"
 
 
 
-import { addClassType, ProductType } from "~/typing/typing"
+import { addClassType } from "~/typing/typing"
 
 
 
@@ -43,7 +42,7 @@ export const toggleForm = (e: Event) => {
   if (e.target instanceof HTMLElement) {
     const id = e.target.id 
     if(!id){ 
-     return;
+    return;
     }
     if(id === 'offerBtn' ){
       setAddClass({...addClass(), contentFormModal: false})
