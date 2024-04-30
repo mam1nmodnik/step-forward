@@ -5,7 +5,7 @@
 
   - [Vite](https://vitejs.dev) - framework
   - [SolidJS](https://solidjs.com) - library
-  - [Shadcn](https://solid-ui.com) - ui framework
+  - [solid-ui](https://solid-ui.com) - ui framework
   - [TypeScript](https://www.typescriptlang.org) - for type safety
 
 
