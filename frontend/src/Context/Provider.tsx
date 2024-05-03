@@ -1,10 +1,10 @@
 import { createStore } from "solid-js/store";
-import { createContext, createEffect, onMount, useContext} from "solid-js";
+import { createContext, onMount } from "solid-js";
 
 import { SolidQueryDevtools } from "@tanstack/solid-query-devtools";
 import { QueryClient, QueryClientProvider } from '@tanstack/solid-query'
 
-import { newBasketType, ProductType } from "~/typing/typing";
+import { BasketType, ProductType } from "~/typing/typing";
 
 
 
@@ -13,17 +13,18 @@ export const MyContext = createContext<any>();
 
 export const Provider = (props: any) => {
 
-  const [newBasket, setNewBasket] = createStore<newBasketType>({
+  const [newBasket, setNewBasket] = createStore<BasketType>({
     countBasket: 0,
     product: [],
   });
+
+  const [product , setProduct] = createStore<ProductType[]>([]);
 
   const updateLocalstorageBasket = ()  => {
     const storedBasket = localStorage.getItem('basket');
     if (storedBasket) {
       const product = JSON.parse(storedBasket); 
       setNewBasket(product)
-      // console.log(product)
     }
   }
   
@@ -31,20 +32,24 @@ export const Provider = (props: any) => {
     return updateLocalstorageBasket()
   })
 
+  
+
+
   const addInBascket = (data: any) =>  {
     const updatedBasket = [...newBasket.product, data];
-
     setNewBasket({ 
       product: updatedBasket, 
       countBasket: updatedBasket.length
     });
-    
     localStorage.setItem(
       'basket',
     JSON.stringify(newBasket)
     );
-    // console.log(newBasket);
-  } 
+    alert('Товар добавлен в корзину')
+
+  }
+
+
   return (
     <QueryClientProvider  client={queryClient}>
       <MyContext.Provider value={{

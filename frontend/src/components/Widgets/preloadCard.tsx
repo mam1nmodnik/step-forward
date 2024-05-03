@@ -1,8 +1,7 @@
 import { Skeleton } from "~/components/ui/skeleton";
 import { JSXElement } from "solid-js"
 
-  
-export default function PreloadGoods(): JSXElement{
+export default function PreloadCard(): JSXElement{
     return (
         <Skeleton class="flex flex-col gap-[3rem] w-[22.75rem] h-[38.938rem] p-[1.5rem] rounded-[1.5rem]">
             <Skeleton class="w-[19.75rem] h-[28.375rem] "/>

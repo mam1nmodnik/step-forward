@@ -2,13 +2,13 @@ import { ProductType, Post } from "~/typing/typing";
 
 export async function GETProductAll(): Promise<ProductType[]> {
 
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const response = await fetch('https://api.escuelajs.co/api/v1/products');
     return response.json();
 }
 
-export const getPostById = async (id: string) => {
-  const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
-  return await response.json()
+export const getPostById = async (id: string) : Promise<ProductType>=> {
+  const response = await fetch(`https://api.escuelajs.co/api/v1/products/${id}`)
+  return await response.json();
 }
 
 
@@ -57,7 +57,6 @@ export async function postOfferForm(
     },
     body: JSON.stringify(data)
   })
-
   return response.json();
 }
 

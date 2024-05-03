@@ -1,6 +1,6 @@
-import {  For, Match,  Suspense, Switch, useContext } from "solid-js";
+import {  createEffect, For, Match,  Suspense, Switch, useContext } from "solid-js";
 import { MyContext } from "~/Context/Provider";
-import { ProductType } from "~/typing/typing";
+import { ImgesType, ProductType } from "~/typing/typing";
 
 
 
@@ -35,7 +35,19 @@ const basket = () =>  {
         })
         })
     }
+    createEffect(() => {
+        console.log(newBasket.product)
+    })
 
+
+    
+    // const images = () => {
+    //     let id = 0;
+    //     return newBasket.product.images.map((el: ImgesType, index: any) => {
+    //         index === id ? <img  src={el} alt="" class="w-[19.75rem] h-[28.375rem]" draggable="false"/> : null
+    //     }
+    //     )
+    // }
     return (
             <Suspense fallback={<div>Loading...</div>}>
                 <Switch>
@@ -49,51 +61,58 @@ const basket = () =>  {
                         <h1>Корзина пуста</h1>
                     </Match>
                     <Match when={newBasket.product.length >= 1}>
-                        <div class="flex flex-col gap-[1.5rem]">
+                        <div class="flex  gap-[1.5rem]">
                             <For each={newBasket.product} >
                                 {
                                     (elem: ProductType, index) => (
-                                    
-                                            <div class="flex items-center">
+                                        <div class="flex flex-col items-center gap-[1.5rem]">
+                                            <div class="flex flex-col">
                                                 <h1 data-index={index} > 
                                                     id: {elem.id},
                                                 </h1>
                                                 <p>Количество: {elem.count}</p>
-                                                <div class="flex flex-col ">
+                                                <div class="flex gap-[1.5rem] ">
                                                     {
-                                                        elem.count >= 2 
-                                                        ?
-                                                            <div class="flex flex-col gap-[1.5rem] ">
-                                                                <button onClick={() => addOneToCart(elem.id)}
-                                                                    class={stbtn}
-                                                                >
-                                                                    Добавить 1 шт. в корзину
-                                                                </button>
-                                                                <button 
-                                                                    onClick={() => removeOneFromTheCart(elem.id)}
-                                                                    class={stbtn}
-                                                                >
-                                                                    Удалить 1 шт. из корзины
-                                                                </button>
-                                                            </div>
-                                                        : 
-                                                            <div class="flex flex-col gap-[1.5rem]">
-                                                                <button 
-                                                                    onClick={() => addOneToCart(elem.id)}
-                                                                    class={stbtn}
-                                                                >
-                                                                    Добавить 1 шт. в корзину
-                                                                </button>
-                                                                <button 
-                                                                    onClick={() => removeProduct(elem.id)}
-                                                                    class={stbtn}
-                                                                >
-                                                                    Удалить из корзины
-                                                                </button>
-                                                            </div>       
-                                                    }
+                                                        elem.images.map((el: ImgesType, index: number) => (
+                                                            index === 0 ? <img  src={el} alt="" class="w-[10.75rem] h-[17.375rem]" draggable="false"/> : null   
+                                                        ))}
                                                 </div>
                                             </div>
+                                            <div class="flex flex-col items-center ">
+                                            {
+                                                elem.count >= 2 
+                                                ?
+                                                    <div class="flex flex-col gap-[1.5rem] ">
+                                                        <button onClick={() => addOneToCart(elem.id)}
+                                                            class={stbtn}
+                                                        >
+                                                            +
+                                                        </button>
+                                                        <button 
+                                                            onClick={() => removeOneFromTheCart(elem.id)}
+                                                            class={stbtn}
+                                                        >
+                                                            -
+                                                        </button>
+                                                    </div>
+                                                : 
+                                                    <div class="flex flex-col gap-[1.5rem]">
+                                                        <button 
+                                                            onClick={() => addOneToCart(elem.id)}
+                                                            class={stbtn}
+                                                        >
+                                                            +
+                                                        </button>
+                                                        <button 
+                                                            onClick={() => removeProduct(elem.id)}
+                                                            class={stbtn}
+                                                        >
+                                                            Удалить из корзины
+                                                        </button>
+                                                    </div>       
+                                            }
+                                            </div>
+                                        </div>
                                     )  
                                 }
                             </For>
